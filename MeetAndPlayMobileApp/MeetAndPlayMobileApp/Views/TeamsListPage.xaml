@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.TeamsListPage"
+             xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
+             xmlns:data="clr-namespace:MeetAndPlayMobileApp.Data"
+             Title="Команды"
+             
+             Shell.BackgroundColor="#A0F5FB"
+             >
+    <Shell.SearchHandler>
+        <controls:RequestSearchHandler Placeholder='Например :"Мафия"'
+                                      ShowsResults="true"
+                                       />
+    </Shell.SearchHandler>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout BackgroundColor ="AliceBlue">
+        <StackLayout AbsoluteLayout.LayoutBounds = "0,0,1,1" AbsoluteLayout.LayoutFlags = "All">
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                    <ListView x:Name="booksList"  ItemsSource="{Binding Requests}"
+                          SelectedItem="{Binding SelectedRequest, Mode=TwoWay}" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <Frame Margin="10,5,10,5" Style="{StaticResource MainFrameStyle}" >
+                                                <StackLayout >
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Image Source="Game.png" WidthRequest="15"/>
+                                                        <Label Text="{Binding NameOfTheGame}" />
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Image Source="PlannedGame.png" WidthRequest="15"/>
+                                                        <Label Text="{Binding PlannedGameDate}" />
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" >
+                                                        <Image Source="Adress.png" WidthRequest="15"/>
+                                                        <Label Text="{Binding PlaceType}" />
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Image Source="Team.png" WidthRequest="15"/>
+                                                        <Label Text="Сейчас игроков: "/>
+                                                        <Label Text="{Binding CurrentPlayersCount}"/>
+                                                    </StackLayout>
+
+
+
+
+                                                </StackLayout>
+                                            </Frame>
+
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+        <ImageButton Source ="AddBtn.png" 
+            
+            BackgroundColor="Transparent"
+            AbsoluteLayout.LayoutFlags="PositionProportional"  
+                     
+            AbsoluteLayout.LayoutBounds=".92,.97,60,60" 
+            Command="{Binding CreateRequestCommand}" />
+    </AbsoluteLayout>
+</ContentPage>

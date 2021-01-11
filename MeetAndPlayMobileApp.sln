@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetAndPlayMobileApp.Android", "MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\MeetAndPlayMobileApp.Android.csproj", "{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetAndPlayMobileApp", "MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.csproj", "{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11C57B1-CF92-4C26-BE34-6EE8BB13D342}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C16BD29-EF75-436A-B15A-1C29EB9E93F8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56002B0D-8AD9-451E-A12B-EB4A1F1D2108}
+	EndGlobalSection
+EndGlobal

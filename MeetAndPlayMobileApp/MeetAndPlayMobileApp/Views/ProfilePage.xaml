@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.ProfilePage"
+             Shell.NavBarIsVisible="True"
+             xmlns:local="clr-namespace:MeetAndPlayMobileApp"
+             xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
+             FlyoutItem.IsVisible="False"
+             Title="Профиль"         
+             >
+    <!--Common Styles Starts-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Margin" Value="0,0,0,20"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Margin="10,10"  VerticalOptions="Start" BackgroundColor="White">
+            <ImageButton Margin="0,40,0,0" x:Name="btnLoadPhotoImage" HorizontalOptions="Center" Source="profile"   WidthRequest="130" HeightRequest="130" BackgroundColor="White" />
+            
+            <Label Margin="0,0,0,40" x:Name="loadPhotoLabel" Text="Загрузить фотографию"  HorizontalOptions="Center" Style="{StaticResource FieldLableStyle}"/>
+            <Label Text="Личная информация" FontSize="18" TextColor="Black"></Label>
+            <Frame Style="{StaticResource MainFrameStyle}">
+                <StackLayout>
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Имя" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtName" Keyboard="Text" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Пол"/>
+                    <Frame HorizontalOptions="Start" WidthRequest="90" Style="{StaticResource FrameStyle}">
+                        <Picker x:Name="pickerMale" >
+                            <Picker.Items>
+                                <x:String>Мужской</x:String>
+                                <x:String>Женский</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Возраст"/>
+                    <Frame Margin="0,0,0,10" HorizontalOptions="Start" WidthRequest="60" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtOld" Keyboard="Numeric" MaxLength="3" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Краткая информация" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtInfo" AutoSize="TextChanges" ></controls:CustomEditor>
+
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Город" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtCity" Keyboard="Text" FontSize="Medium"  Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Интересы" FontSize="18" TextColor="Black"></Label>
+            <Frame Style="{StaticResource MainFrameStyle}">
+
+                <StackLayout>
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Свободное время" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtFreeTime" Keyboard="Text"></controls:CustomEditor>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Игра" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtGames" Keyboard="Text" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Уровень игры" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtPlayLvl" Keyboard="Text" FontSize="Medium"  Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Краткая информация"/>
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtInterestsInfo" Keyboard="Text" AutoSize="TextChanges" ></controls:CustomEditor>
+                    </Frame  >
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Контактная информация" FontSize="18" TextColor="Black"></Label>
+            <Frame Style="{StaticResource MainFrameStyle}">
+                <StackLayout>
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Электронная почта" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtEmail" Keyboard="Email" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Телефон" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtPhoneNumber" Keyboard="Telephone" MaxLength="11" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Социальные сети"/>
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtSocialNetworks" Keyboard="Url" AutoSize="TextChanges" ></controls:CustomEditor>
+                    </Frame  >
+
+
+                    <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="btnGoToLoginPage" TextColor="White" BackgroundColor="{StaticResource LightGreenColor}" Text="Войти" Clicked="btnGoToLoginPage_Clicked"></Button>
+                </StackLayout>
+            </Frame>
+
+
+
+
+        </StackLayout>
+
+
+    </ScrollView>
+
+
+
+</ContentPage>

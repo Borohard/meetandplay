@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.CreateRequestDetailPage"
+             xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
+             xmlns:enums="clr-namespace:MeetAndPlayMobileApp.Enums"
+             Title="Новая заявка"
+             
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Margin" Value="0,0,0,20"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <StackLayout Margin="10,10"  VerticalOptions="Start">
+            <Label Text="Заполните поля" FontSize="18" TextColor="Black" Margin="0,0,0,10" ></Label>
+            <Frame Style="{StaticResource MainFrameStyle}">
+                <StackLayout>
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Ково вы ищите?" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <Picker x:Name="pickerCategory" >
+                            <Picker.Items>
+                                <x:String>Команду</x:String>
+                                <x:String>Игрока</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Игра"/>
+                    <Frame HorizontalOptions="Start" WidthRequest="90" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="nameOfTheGame" Text="{Binding NameOfTheGame}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Уровень игры" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <Picker x:Name="pickerGameLevel" >
+                            <Picker.Items>
+                                <x:String>Новичок</x:String>
+                                <x:String>Любитель</x:String>
+                                <x:String>Про</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Описание" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtInfo" AutoSize="TextChanges" ></controls:CustomEditor>
+
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Сколько людей уже участвует?" />
+                    <Frame HorizontalOptions="Start" WidthRequest="60" Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry Text="{Binding CurrentPlayersCount}" x:Name="txtCurrentPeopleCount" Keyboard="Numeric" FontSize="Medium" MaxLength="4" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Необходимое количество участников" />
+                    <Frame HorizontalOptions="Start" WidthRequest="60" Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtRequiredCountPlayers" Keyboard="Numeric" FontSize="Medium" MaxLength="4" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Дата\Время начала" />
+
+                    <Frame Margin="0,0,0,10"  Style="{StaticResource FrameStyle}">
+                        <controls:DateTimePicker x:Name="dateTimeEventPicker"></controls:DateTimePicker>
+                    </Frame>
+
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Тип места" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Picker SelectedIndex="{Binding PlaceType}" x:Name="pickerPlaceType" ItemsSource="{Binding PlaceType}">
+
+                        </Picker>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Адрес" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtEventAdress" AutoSize="TextChanges" Style="{StaticResource EntryStyle}"></controls:CustomEditor>
+                    </Frame>
+
+                    <Button  x:Name ="btnPublisher" Text="Опубликовать"  BackgroundColor="LightGreen" HorizontalOptions="Center" Command="{Binding ListViewModel.SaveRequestCommand}" CommandParameter="{Binding}" ></Button>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
