@@ -16,7 +16,17 @@ namespace MeetAndPlayMobileApp.Views
         {
             InitializeComponent();
             this.BindingContext = new LoginViewModel();
+            Shell.SetPresentationMode(this, PresentationMode.ModalAnimated);
+
+            
         }
+
+        
+
+        
+
+        
+
 
         
     }

@@ -1,20 +1,24 @@
 ﻿using MeetAndPlayMobileApp.Models;
+using MeetAndPlayMobileApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MeetAndPlayMobileApp.Data
 {
-    public class RequestData
+    public static class RequestData
     {
-        public static IList<Request> Requests { get; set; }
+        public static ObservableCollection<RequestViewModel> Requests { get; private set; }
 
-        public RequestData()
+        static RequestData()
         {
-            Requests = new List<Request>();
+            Requests = new ObservableCollection<RequestViewModel>();
 
-            Requests.Add(new Request
-            {
+        Requests.Add(new RequestViewModel
+        {
+                Title = "Хотим поиграть в манчкин",
+                ImageOfRequest = "Manc.png",
                 FoundCategory = Enums.FoundCategory.Team,
                 NameOfTheGame = "Манчкин",
                 GameLevel = Enums.GameLevel.Pro,
@@ -25,8 +29,10 @@ namespace MeetAndPlayMobileApp.Data
                 PlaceType = Enums.PlaceType.Cafe
             });
 
-            Requests.Add(new Request
+            Requests.Add(new RequestViewModel
             {
+                Title = "Ищем одного человека для игры",
+                ImageOfRequest = "Anticafe",
                 FoundCategory = Enums.FoundCategory.Team,
                 NameOfTheGame = "Дженга",
                 GameLevel = Enums.GameLevel.Pro,
@@ -37,8 +43,10 @@ namespace MeetAndPlayMobileApp.Data
                 PlaceType = Enums.PlaceType.Cafe
             });
 
-            Requests.Add(new Request
+            Requests.Add(new RequestViewModel
             {
+                Title = "Монополия на века",
+                ImageOfRequest = "Anticafe",
                 FoundCategory = Enums.FoundCategory.Team,
                 NameOfTheGame = "Монополия",
                 GameLevel = Enums.GameLevel.Noob,
@@ -49,7 +57,7 @@ namespace MeetAndPlayMobileApp.Data
                 PlaceType = Enums.PlaceType.Cafe
             });
 
-            Requests.Add(new Request
+            Requests.Add(new RequestViewModel
             {
                 FoundCategory = Enums.FoundCategory.Team,
                 NameOfTheGame = "Колонизаторы",

@@ -45,10 +45,10 @@
 
     <ScrollView>
         <StackLayout Margin="10,10"  VerticalOptions="Start" BackgroundColor="White">
-            <ImageButton Margin="0,40,0,0" x:Name="btnLoadPhotoImage" HorizontalOptions="Center" Source="profile"   WidthRequest="130" HeightRequest="130" BackgroundColor="White" />
-            
-            <Label Margin="0,0,0,40" x:Name="loadPhotoLabel" Text="Загрузить фотографию"  HorizontalOptions="Center" Style="{StaticResource FieldLableStyle}"/>
+            <Image  Margin="0,20,0,0" x:Name="image" Source="user"   WidthRequest="200" />
+            <Button Margin="35" BackgroundColor="#DA30DD" Text="Загрузить фото" Clicked="OnPickPhotoButtonClicked"/>
             <Label Text="Личная информация" FontSize="18" TextColor="Black"></Label>
+            
             <Frame Style="{StaticResource MainFrameStyle}">
                 <StackLayout>
                     <Label Style="{StaticResource FieldLableStyle}" Text="Имя" />

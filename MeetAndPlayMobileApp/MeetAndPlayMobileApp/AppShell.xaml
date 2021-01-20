@@ -6,6 +6,7 @@
        Title="MeatAndPlay"
        x:Class="MeetAndPlayMobileApp.AppShell"
        xmlns:views="clr-namespace:MeetAndPlayMobileApp.Views"
+       Shell.TabBarIsVisible="False" 
        >
 
     <!--
@@ -17,12 +18,12 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value= "#DA30DD"  />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
-                <Setter Property="Shell.TitleColor" Value="White" />
-                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+                <Setter Property="Shell.BackgroundColor" Value= "#FFD15C"  />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
+                <Setter Property="Shell.TitleColor" Value="Black" />
+                <Setter Property="Shell.DisabledColor" Value="Black" />
+                <Setter Property="Shell.UnselectedColor" Value="Black" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Black" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="Black"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="Black"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="Black"/>
@@ -31,24 +32,14 @@
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!--<TabBar x:Name="tabBar"  Route= "app" Shell.NavBarHasShadow="True">
-        <Tab Title="Главная" Icon="HomeTab" Route="HomePage" Shell.FlyoutBehavior="Disabled" >
-            <ShellContent Title="Команды" Route="teams" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:HomePage}"/>
-
-        </Tab>
-        <Tab Title="Запросы" Route ="requests" Icon="NotesTab">
-            <ShellContent Title="Заявки" Route="requests" ContentTemplate="{DataTemplate local:AboutPage}"/>
-
-        </Tab>
-
-        <ShellContent Title="Профиль" Route="ProfilePage" Icon="Prof" ContentTemplate="{DataTemplate local:ProfilePage}" />
-    </TabBar>-->
-
     
 
+    
+    <!--
     <FlyoutItem x:Name="fly" Route="app"
                 Title="Главная" Icon="HomeTab"
                 FlyoutDisplayOptions="AsSingleItem">
@@ -64,9 +55,26 @@
     </FlyoutItem>
     <MenuItem Text="О нас" IconImageSource="user" Clicked="OnAboutClicked">
     </MenuItem>
+    -->
+
+    <FlyoutItem x:Name="fly" Route="app"
+                Title="Главная" Icon="HomeTab"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Поиск"  Icon="search2" Route="HomePage">
+            <ShellContent Title="Команды" Route="teams" FlyoutItemIsVisible="False" ContentTemplate="{DataTemplate local:HomePage}"/>
+        </Tab>
+        <Tab x:Name="addTab" Title="Запросы"  Icon="NotesTab" Route="AboutPage">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
+        </Tab>
+        <Tab Title="Профиль" Icon="user" Route="LoadPage">
+            <ShellContent  ContentTemplate="{DataTemplate local:LoadPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <MenuItem Text="О нас" IconImageSource="user" Clicked="OnAboutClicked">
+    </MenuItem>
 
     <ShellContent Route="LoginPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:LoginPage}" />
-
+    <ShellContent FlyoutItemIsVisible="False" Route="ProfilePage" Shell.BackgroundColor="#DA30DD" ContentTemplate="{DataTemplate local:ProfilePage}" />
 
 
 </Shell>

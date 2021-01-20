@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MeetAndPlayMobileApp.Enums
 {
     public enum FoundCategory
     {
-        [Description("Не задано")]
+        [Display(Description = "Не важно")]       
         Nobody,
-        [Description("Команду")]
+        [Display(Description = "Команду")]
         Team,
-        [Description("Игрока")]
+        [Display(Description = "Игрока")]
         PLayer
     }
 }

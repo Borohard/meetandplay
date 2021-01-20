@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.RegistrationPage"
+             xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+                <!-- <Setter Property="BorderColor" Value="SkyBlue"/>-->
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Frame>
+            <StackLayout Margin="20,0,20,0">
+                <Image Margin="0,40,0,45" Source="mapicon" WidthRequest="200"/>
+                <Label Text="Регистрация" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" FontSize="25"/>
+                <Label Text="Ваши данные будут" Margin="0,0,0,-6" HorizontalOptions="Center" FontSize="17"/>
+                <Label Text="использоваться для входа в аккаунт" Margin="0,0,0,20"  HorizontalOptions="Center" FontSize="17"/>
+
+                <Frame Margin="0,20,0,15" HeightRequest="45" Style="{StaticResource FrameStyle}">
+                    <controls:CustomEntry x:Name="EntryUserName" Placeholder="Имя" PlaceholderColor="Black" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                </Frame>
+                <Frame Margin="0,0,0,15" HeightRequest="45" Style="{StaticResource FrameStyle}">
+                    <controls:CustomEntry x:Name="EntryUserEmail" Placeholder="Почта" PlaceholderColor="Black"  FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                </Frame>
+                <Frame Margin="0,0,0,15" HeightRequest="45" Style="{StaticResource FrameStyle}">
+                    <controls:CustomEntry x:Name="EntryUserPassword" IsPassword="True" Placeholder="Пароль" PlaceholderColor="Black" Text="{Binding NameOfTheGame}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                </Frame>
+                <Button Margin="0,0,0,110" VerticalOptions="Center" CornerRadius="10" Text="Зарегестрироваться" BackgroundColor="#AC139D" Command="{Binding LoginCommand}"/>
+            </StackLayout>
+        </Frame>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.Page1"
+             xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
+             xmlns:data="clr-namespace:MeetAndPlayMobileApp.Data"
+             xmlns:local="clr-namespace:MeetAndPlayMobileApp.ViewModels"
+             Title="Команды"            
+             Shell.BackgroundColor="#A0F5FB"
+             >
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <RefreshView IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+             Command="{Binding RefreshCommand}">
+            <!--
+            {x:Static data:RequestData.Requests}
+            -->
+            <CollectionView 
+                        x:Name="requestsCollection"
+                        ItemsSource="{Binding Requests}"
+                        SelectedItem="{Binding SelectedRequest, Mode=TwoWay}"
+                        SelectionMode="Single"
+                        SelectionChanged="requestsCollection_SelectionChanged"
+                        
+                         
+                        
+                        >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+
+                            <Frame Margin="5,5,5,5" HasShadow="False"  Style="{StaticResource MainFrameStyle}" >
+                                <StackLayout Margin="-10" >
+                                    <Frame  HeightRequest="-15">
+                                        <Label Margin="-10,-20,0,0" Text="{Binding Title}" TextColor="Black" FontSize="Body"/>
+                                    </Frame>
+
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Source="{Binding ImageOfRequest}" HeightRequest="20" WidthRequest="120" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Aspect="AspectFit"/>
+
+
+                                        <StackLayout Grid.Row="0" Grid.Column="0">
+                                            <StackLayout Orientation="Horizontal" >
+                                                <Image Source="Game.png" WidthRequest="15"/>
+                                                <Label Text="{Binding NameOfTheGame}" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" >
+                                                <Image Source="Adress.png" WidthRequest="15"/>
+                                                <Label Text="{Binding PlaceType}" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="PlannedGame.png" WidthRequest="15"/>
+                                                <Label Text="{Binding PlannedGameDate}" />
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="Team.png" WidthRequest="15"/>
+                                                <Label Text="Сейчас игроков: "/>
+                                                <Label Text="{Binding CurrentPlayersCount}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+            </CollectionView>
+        </RefreshView>
+
+        <Image x:Name="addIcon" Source="AddBtn.png" BackgroundColor="Transparent"  AbsoluteLayout.LayoutFlags="PositionProportional"  
+                     
+            AbsoluteLayout.LayoutBounds=".92,.97,60,60" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer   Command="{Binding CreateRequestCommand, Mode=TwoWay}"  />
+            </Image.GestureRecognizers>
+        </Image>
+    </AbsoluteLayout>
+</ContentPage>

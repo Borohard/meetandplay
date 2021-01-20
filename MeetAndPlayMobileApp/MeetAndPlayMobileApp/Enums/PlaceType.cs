@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace MeetAndPlayMobileApp.Enums
 {
     public enum PlaceType
     {
-        [Description("Не задано")]
+
+        [Display(Description = " ")]
         Undefined,
-        [Description("Дома")]
+        [Display(Description = "Дома")]
         Home,
-        [Description("В кафе")]
+        [Display(Description = "В кафе")]
         Cafe,
-        [Description("В лаундж баре")]
+        [Display(Description = "В лаундж баре")]
         Lounge,
     }
 }

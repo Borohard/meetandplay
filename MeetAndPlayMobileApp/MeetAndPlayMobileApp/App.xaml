@@ -6,6 +6,21 @@
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
+        <DataTemplate x:Key="RequestSearchTemplate">
+            <Grid Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*" />
+                    <ColumnDefinition Width="0.85*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding ImageOfRequest}" 
+                       Aspect="AspectFill"
+                       HeightRequest="40" 
+                       WidthRequest="40" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Title}" 
+                       FontAttributes="Bold" />
+            </Grid>
+        </DataTemplate>
         <ResourceDictionary>
             <Color x:Key="Primary">#00EFFF</Color>
             <Style TargetType="Button">

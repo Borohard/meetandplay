@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.RequestPage"
+             Title="{Binding Title}"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="True">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView BackgroundColor ="AliceBlue" HeightRequest="2000">
+            <StackLayout Margin="10">
+                <Frame HeightRequest="240" Style="{StaticResource MainFrameStyle}">
+                    <Image x:Name="image" HeightRequest="230" WidthRequest="300" >
+                        <!--
+                        
+                        -->
+                        <Image.Source>
+                            <FileImageSource File="{Binding ImageOfRequest}"  />
+                        </Image.Source>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+
+                    </Image>
+                </Frame>
+                
+                
+                <Label Margin="0,20,0,0" Text="Описание " FontSize="Large" Style="{x:StaticResource FieldLableStyle}"/>
+                <Frame Style="{x:StaticResource FrameStyle }">
+                    <Label Margin="10" Text="{Binding Description}"/>
+                </Frame>
+                <Label Text="Информация о мероприятии " Style="{x:StaticResource FieldLableStyle}"/>
+                <Frame Style="{x:StaticResource FrameStyle }">
+                    <StackLayout Margin="15">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="Game.png" WidthRequest="15"/>
+                            <Label Text="Игра: "/>
+                            <Label Text="{Binding NameOfTheGame}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <Image Source="Adress.png" WidthRequest="15"/>
+                            <Label Text="Где:"/>
+                            <Label Text="{Binding PlaceType}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="PlannedGame.png" WidthRequest="15"/>
+                            <Label Text="Когда:"/>
+                            <Label Text="{Binding PlannedGameDate}" />
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="Team.png" WidthRequest="15"/>
+                            <Label Text="Сейчас игроков: "/>
+                            <Label Text="{Binding CurrentPlayersCount}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="AliceBlue" >
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Максимальное количество игроков:  " Style="{x:StaticResource FieldLableStyle} "/>
+                        <Label Text="{Binding MaxPlayersCount}" />
+                    </StackLayout>    
+                </Frame>
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,20">
+                    <Button  x:Name ="btnHello" Text="Постучаться" TextColor="Black"  BackgroundColor="#FFD15C" CornerRadius="10" HorizontalOptions="Start" ></Button>
+                    <Button  x:Name ="btnInvite" Text="Позвать к себе" TextColor="Black" BackgroundColor="#FFD15C" CornerRadius="10" HorizontalOptions="EndAndExpand" ></Button>
+                </StackLayout>
+                
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

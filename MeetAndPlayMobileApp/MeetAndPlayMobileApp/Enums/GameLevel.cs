@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace MeetAndPlayMobileApp.Enums
 {
     public enum GameLevel
     {
-        [Description("Не задано")]
-        Undefined,
-        [Description("Не знаю как играть")]
+        [Display(Description = " ")]
+        Undefined,       
+        [Display(Description = "Не знаю как играть")]
         Noob,
-        [Description("Понимаю как играть, знаю правила")]
+        [Display(Description = "Понимаю как играть, знаю правила")]        
         Middle,
-        [Description("Подержи моё пиво, сынок")]
+        [Display(Description = "Подержи моё пиво, сынок")]        
         Pro
     }
 }

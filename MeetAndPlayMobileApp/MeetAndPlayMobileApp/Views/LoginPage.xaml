@@ -9,10 +9,13 @@
              x:Class="MeetAndPlayMobileApp.Views.LoginPage"
              Shell.PresentationMode="ModalAnimated"
              Shell.NavBarIsVisible="False"  >
-              
-             
-              
-            
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="True" Command="{Binding BackButtonCommand}"
+                             />
+    </Shell.BackButtonBehavior>
+
+
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -57,7 +60,7 @@
                     <controls:CustomEntry x:Name="EntryUserEmail" Placeholder="Почта" PlaceholderColor="Black" Text="{Binding NameOfTheGame}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
                 </Frame>
                 <Frame Margin="0,0,0,20" Style="{StaticResource FrameStyle}">
-                    <controls:CustomEntry x:Name="EntryUserPaasword" Placeholder="Пароль" PlaceholderColor="Black" Text="{Binding NameOfTheGame}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    <controls:CustomEntry x:Name="EntryUserPaasword" Placeholder="Пароль" IsPassword="True" PlaceholderColor="Black" Text="{Binding NameOfTheGame}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
                 </Frame>
                 <Button  VerticalOptions="Center" Text="Войти" CornerRadius="10" BackgroundColor="#AC139D" Command="{Binding LoginCommand}"/>
                 <Label Text="Забыли пароль?" Margin="0,0,0,75" HorizontalOptions ="Center" Style="{StaticResource FieldLableStyle}"/>

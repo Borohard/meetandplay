@@ -4,16 +4,34 @@
              x:Class="MeetAndPlayMobileApp.Views.HomePage"
              xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
              xmlns:views="clr-namespace:MeetAndPlayMobileApp.Views"
-             
-             BarBackgroundColor="#DA30DD">
+             xmlns:data="clr-namespace:MeetAndPlayMobileApp.Data"
+             Title="MeetAndPlay"
+             BarBackgroundColor="#FFD15C"
+            BarTextColor="Black"
+            x:Name="homePage"
+            >
+
     <Shell.SearchHandler>
         <controls:RequestSearchHandler Placeholder='Например :"Мафия"'
                                        ShowsResults="true"
-                                       />
+                                       SearchBoxVisibility="Collapsible"
+                                       
+                                       
+                                       ItemTemplate="{StaticResource RequestSearchTemplate}"
+                                       x:Name="FilterByLName"
+                                       />   
     </Shell.SearchHandler>
-    
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Фильтры" IconImageSource="options" Order="Primary"  Command="{Binding OpenFilterPage}"  />
+
+    </TabbedPage.ToolbarItems>
+
+
+
+
+
     <!--Pages can be added as references or inline-->
-    <views:TeamsListPage/>
-    <ContentPage Title="Tab 2"/>
-    <ContentPage Title="Tab 3"/>
+    <views:TeamsListPage x:Name="teamsList" Shell.TitleColor="Black"/>
+    <views:Page1 Title="Игроки" x:Name="bruh" Shell.TitleColor="Black"/>
+    <ContentPage Title="События" Shell.TitleColor="Black"/>
 </TabbedPage>

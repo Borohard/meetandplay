@@ -5,15 +5,11 @@
              xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
              xmlns:data="clr-namespace:MeetAndPlayMobileApp.Data"
              Title="Команды"
-             
+             Shell.TitleColor="Black"
              Shell.BackgroundColor="#A0F5FB"
              >
-    <Shell.SearchHandler>
-        <controls:RequestSearchHandler Placeholder='Например :"Мафия"'
-                                      ShowsResults="true"
-                                       />
-    </Shell.SearchHandler>
     
+
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -48,42 +44,122 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <AbsoluteLayout BackgroundColor ="AliceBlue">
+    <AbsoluteLayout BackgroundColor ="#F2EFEA">
         <StackLayout AbsoluteLayout.LayoutBounds = "0,0,1,1" AbsoluteLayout.LayoutFlags = "All">
-            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-
-                    <ListView x:Name="booksList"  ItemsSource="{Binding Requests}"
-                          SelectedItem="{Binding SelectedRequest, Mode=TwoWay}" HasUnevenRows="True">
+            <ScrollView >
+                <StackLayout >
+                    <!-- ItemsSource="" {x:Static data:RequestData.Requests}-->
+                    <ListView  x:Name="requestsList" ItemSelected="requestsList_ItemSelected" ItemsSource="{Binding Requests}"
+                          SelectedItem="{Binding SelectedRequest, Mode=TwoWay}" HasUnevenRows="True" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <ViewCell.View>
+                                    <ViewCell.View >
                                         <StackLayout>
-                                            <Frame Margin="10,5,10,5" Style="{StaticResource MainFrameStyle}" >
-                                                <StackLayout >
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Image Source="Game.png" WidthRequest="15"/>
-                                                        <Label Text="{Binding NameOfTheGame}" />
-                                                    </StackLayout>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Image Source="PlannedGame.png" WidthRequest="15"/>
-                                                        <Label Text="{Binding PlannedGameDate}" />
-                                                    </StackLayout>
-                                                    <StackLayout Orientation="Horizontal" >
-                                                        <Image Source="Adress.png" WidthRequest="15"/>
-                                                        <Label Text="{Binding PlaceType}" />
-                                                    </StackLayout>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Image Source="Team.png" WidthRequest="15"/>
-                                                        <Label Text="Сейчас игроков: "/>
-                                                        <Label Text="{Binding CurrentPlayersCount}"/>
-                                                    </StackLayout>
+                                            
+                                            <Frame Margin="5,5,5,5" HasShadow="False"  Style="{StaticResource MainFrameStyle}" >
+                                                <StackLayout Margin="-10" >
+                                                    <Frame  HeightRequest="-15">
+                                                        <Label Margin="-10,-20,0,0" Text="{Binding Title}" TextColor="Black" FontSize="Body"/>    
+                                                    </Frame>   
+                                                            
+                                                        
+                                                    <Grid>
+                                                        
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="200" />
+                                                            <ColumnDefinition Width="*" />
+                                                            
+                                                        </Grid.ColumnDefinitions>
+                                                        <Image Source="{Binding ImageOfRequest}" Grid.Column="1" Grid.Row="0"/>
 
 
 
+                                                        <StackLayout Grid.Row="0" Grid.Column="0">
+                                                            <StackLayout Orientation="Horizontal" >
+                                                                    <Image Source="Game.png" WidthRequest="15"/>
+                                                                    <Label Text="{Binding NameOfTheGame}" />
+                                                                </StackLayout>
+                                                                <StackLayout Orientation="Horizontal" >
+                                                                    <Image Source="Adress.png" WidthRequest="15"/>
+                                                                    <Label Text="{Binding PlaceType}" />
+                                                                </StackLayout>
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Image Source="PlannedGame.png" WidthRequest="15"/>
+                                                                    <Label Text="{Binding PlannedGameDate}" />
+                                                                </StackLayout>
 
-                                                </StackLayout>
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Image Source="Team.png" WidthRequest="15"/>
+                                                                    <Label Text="Сейчас игроков: "/>
+                                                                    <Label Text="{Binding CurrentPlayersCount}"/>
+                                                                </StackLayout>    
+                                                        </StackLayout>
+                                                             
+                                                        
+                                                    </Grid>
+                                                                                                      
+                                                </StackLayout>   
+                                                
+                                                <!--
+                                                <StackLayout Margin="-10" >
+                                                    <Frame  HeightRequest="-15">
+                                                        <Label Margin="-10,-20,0,0" Text="{Binding Title}" TextColor="Black" FontSize="Body"/>    
+                                                    </Frame>   
+                                                            
+                                                        <Image Source="{Binding ImageOfRequest}"/>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Image Source="Game.png" WidthRequest="15"/>
+                                                                <Label Text="{Binding NameOfTheGame}" />
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal" >
+                                                                <Image Source="Adress.png" WidthRequest="15"/>
+                                                                <Label Text="{Binding PlaceType}" />
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Image Source="PlannedGame.png" WidthRequest="15"/>
+                                                                <Label Text="{Binding PlannedGameDate}" />
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Image Source="Team.png" WidthRequest="15"/>
+                                                                <Label Text="Сейчас игроков: "/>
+                                                                <Label Text="{Binding CurrentPlayersCount}"/>
+                                                            </StackLayout>                                                 
+                                                </StackLayout> 
+                                                -->
+                                                
+                                                <!--
+                                                <Grid Margin="-10">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="2*" />
+                                                        <RowDefinition Height="30" />
+                                                        <RowDefinition Height="50" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="100" />
+                                                        <ColumnDefinition Width="15" />
+                                                        <ColumnDefinition Width="70" />
+                                                        <ColumnDefinition Width="15" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Frame Grid.Row="0" Margin="0,0,-60,0" Grid.ColumnSpan="5" WidthRequest="700" HeightRequest="-15">
+                                                     <Label Margin="-10,-20,0,0" Text="{Binding Title}"  TextColor="Black" FontSize="Body"/>    
+                                                    </Frame>
+                                                   
+                                                    <Image HorizontalOptions="Start" VerticalOptions="Center" Margin="0,-3,0,0" Source="{Binding ImageOfRequest}" Grid.Row="1" Grid.RowSpan="2"  />
+                                                    <Image HorizontalOptions="Start" Source="Game.png" WidthRequest="15" HeightRequest="15" Grid.Column="1" Grid.Row="1"/>
+                                                    <Label HorizontalOptions="Start" VerticalOptions="Center" Margin="-75"  Text="{Binding NameOfTheGame}" FontSize="Micro" Grid.Column="3" Grid.Row="1" />
+                                                    <Image HorizontalOptions="Start"  Source="Adress.png" HeightRequest="15" WidthRequest="15" Grid.Column="4" Grid.Row="1" />
+                                                    <Label HorizontalOptions="Start" VerticalOptions="Center" Margin="-30"  Text="{Binding PlaceType}" Grid.Column="5" Grid.Row="1" />
+                                                    <Image HorizontalOptions="Start" Source="PlannedGame.png" WidthRequest="15" Grid.Column="1" Grid.Row="2" />
+                                                    <Label Text="{Binding PlannedGameDate}" VerticalOptions="Center" Grid.Column="2" Grid.Row="2" FontSize="Micro" />
+                                                    <Image HorizontalOptions="Start" Source="Team.png" WidthRequest="15" Grid.Column="4" Grid.Row="2"/>
+                                                    <Label Text="Сейчас игроков" Margin="-30,0,6,0" VerticalOptions="Center" Grid.Column="5" Grid.Row="2" />
+                                                    <Label Text="{Binding CurrentPlayersCount}"  Margin="40,0,-3,0" VerticalOptions="Center" Grid.Column="5" Grid.Row="2"/>
+                                                </Grid>
+                                                -->
+                                                
                                             </Frame>
 
                                         </StackLayout>
@@ -96,12 +172,19 @@
             </ScrollView>
         </StackLayout>
 
-        <ImageButton Source ="AddBtn.png" 
+      <!--  <ImageButton Source ="AddBtn.png" 
             
             BackgroundColor="Transparent"
             AbsoluteLayout.LayoutFlags="PositionProportional"  
                      
             AbsoluteLayout.LayoutBounds=".92,.97,60,60" 
-            Command="{Binding CreateRequestCommand}" />
+            Command="{Binding CreateRequestCommand}" /> -->
+        <Image x:Name="addIcon" Source="AddBtn.png" BackgroundColor="Transparent"  AbsoluteLayout.LayoutFlags="PositionProportional"  
+                     
+            AbsoluteLayout.LayoutBounds=".92,.97,60,60" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding CreateRequestCommand, Mode=TwoWay}"  />
+            </Image.GestureRecognizers>
+        </Image>
     </AbsoluteLayout>
 </ContentPage>

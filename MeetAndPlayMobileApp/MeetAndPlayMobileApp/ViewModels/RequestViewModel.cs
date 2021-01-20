@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MeetAndPlayMobileApp.ViewModels
 {
@@ -33,6 +34,19 @@ namespace MeetAndPlayMobileApp.ViewModels
             }
         }
 
+        public ImageSource ImageOfRequest
+        {
+            get { return Request.ImageOfRequest; }
+            set
+            {
+                if (Request.ImageOfRequest != value)
+                {
+                    Request.ImageOfRequest = value;
+                    OnPropertyChanged("ImageOfRequest");
+                }
+            }
+        }
+
         public string NameOfTheGame
         {
             get { return Request.NameOfTheGame; }
@@ -42,6 +56,18 @@ namespace MeetAndPlayMobileApp.ViewModels
                 {
                     Request.NameOfTheGame = value;
                     OnPropertyChanged("NameOfTheGame");
+                }
+            }
+        }
+        public string Title
+        {
+            get { return Request.Title; }
+            set
+            {
+                if (Request.Title != value)
+                {
+                    Request.Title = value;
+                    OnPropertyChanged("Title");
                 }
             }
         }

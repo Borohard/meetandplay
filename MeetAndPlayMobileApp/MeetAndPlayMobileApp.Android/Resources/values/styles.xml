@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
-  <style name="MainTheme" parent="MainTheme.Base">
+  <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <!-- As of Xamarin.Forms 4.6 the theme has moved into the Forms binary -->
     <!-- If you want to override anything you can do that here. -->
     <!-- Underneath are a couple of entries to get you started. -->
@@ -14,10 +14,11 @@
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
+    <item name="android:windowLightStatusBar">false</item>
   </style>
-  <style name="MyTheme.Splash" parent="Theme.AppCompat.Light">
+  <style name="MyTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:windowBackground">@drawable/splash_screen</item>
     <item name="android:windowNoTitle">true</item>
-
+    <!-- parent="Theme.AppCompat.Light" -->
   </style>
 </resources>

@@ -5,6 +5,7 @@
              xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
              xmlns:enums="clr-namespace:MeetAndPlayMobileApp.Enums"
              Title="Новая заявка"
+             Shell.NavBarIsVisible="True"
              
              >
     <ContentPage.Resources>
@@ -43,41 +44,46 @@
 
 
     <ScrollView>
-        <StackLayout Margin="10,10"  VerticalOptions="Start">
+        <StackLayout Margin="10,10"  VerticalOptions="Start" >
+            <Image  Margin="0,20,0,0" x:Name="image"   WidthRequest="200" />
+            <Button Margin="35"  Text="Загрузить фото" Clicked="OnPickPhotoButtonClicked"/>
             <Label Text="Заполните поля" FontSize="18" TextColor="Black" Margin="0,0,0,10" ></Label>
-            <Frame Style="{StaticResource MainFrameStyle}">
-                <StackLayout>
-                    <Label Style="{StaticResource FieldLableStyle}" Text="Ково вы ищите?" />
-                    <Frame Style="{StaticResource FrameStyle}">
-                        <Picker x:Name="pickerCategory" >
-                            <Picker.Items>
-                                <x:String>Команду</x:String>
-                                <x:String>Игрока</x:String>
-                            </Picker.Items>
-                        </Picker>
+            <Frame BackgroundColor ="AliceBlue" Style="{StaticResource MainFrameStyle}">
+                <StackLayout x:Name="stackLayout">
+                    
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Название заявки"/>
+                    <Frame   Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="nameOfTheRequest" Text="{Binding Title}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+                    
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Описание" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtInfo" Text="{Binding Description}" AutoSize="TextChanges" ></controls:CustomEditor>
+
                     </Frame>
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Игра"/>
-                    <Frame HorizontalOptions="Start" WidthRequest="90" Style="{StaticResource FrameStyle}">
+                    <Frame   Style="{StaticResource FrameStyle}">
                         <controls:CustomEntry x:Name="nameOfTheGame" Text="{Binding NameOfTheGame}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
                     </Frame>
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Уровень игры" />
                     <Frame Style="{StaticResource FrameStyle}">
-                        <Picker x:Name="pickerGameLevel" >
-                            <Picker.Items>
-                                <x:String>Новичок</x:String>
-                                <x:String>Любитель</x:String>
-                                <x:String>Про</x:String>
-                            </Picker.Items>
-                        </Picker>
+                        
+                        <controls:EnumBindablePicker x:Name="pickerGameLevel" x:TypeArguments="enums:GameLevel" SelectedItem="{Binding GameLevel}"/>
                     </Frame>
 
-                    <Label Style="{StaticResource FieldLableStyle}" Text="Описание" />
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Где" />
                     <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEditor x:Name="txtInfo" AutoSize="TextChanges" ></controls:CustomEditor>
-
+                        <controls:EnumBindablePicker x:Name="pickerPlaceType" x:TypeArguments="enums:PlaceType" SelectedItem="{Binding PlaceType}"/>
+                        
                     </Frame>
+
+                   <!-- <Label Style="{StaticResource FieldLableStyle}" Text="Адрес" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEditor x:Name="txtEventAdress" AutoSize="TextChanges" Style="{StaticResource EntryStyle}"></controls:CustomEditor>
+                    </Frame>-->
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Сколько людей уже участвует?" />
                     <Frame HorizontalOptions="Start" WidthRequest="60" Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
@@ -86,7 +92,7 @@
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Необходимое количество участников" />
                     <Frame HorizontalOptions="Start" WidthRequest="60" Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEntry x:Name="txtRequiredCountPlayers" Keyboard="Numeric" FontSize="Medium" MaxLength="4" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                        <controls:CustomEntry x:Name="txtRequiredCountPlayers" Text="{Binding MaxPlayersCount}" Keyboard="Numeric" FontSize="Medium" MaxLength="4" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
                     </Frame>
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Дата\Время начала" />
@@ -96,19 +102,9 @@
                     </Frame>
 
 
-                    <Label Style="{StaticResource FieldLableStyle}" Text="Тип места" />
-                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <Picker SelectedIndex="{Binding PlaceType}" x:Name="pickerPlaceType" ItemsSource="{Binding PlaceType}">
 
-                        </Picker>
-                    </Frame>
 
-                    <Label Style="{StaticResource FieldLableStyle}" Text="Адрес" />
-                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEditor x:Name="txtEventAdress" AutoSize="TextChanges" Style="{StaticResource EntryStyle}"></controls:CustomEditor>
-                    </Frame>
-
-                    <Button  x:Name ="btnPublisher" Text="Опубликовать"  BackgroundColor="LightGreen" HorizontalOptions="Center" Command="{Binding ListViewModel.SaveRequestCommand}" CommandParameter="{Binding}" ></Button>
+                    <Button  x:Name ="btnPublisher" Text="Опубликовать"  BackgroundColor="#FFD15C" HorizontalOptions="Center" Clicked="BtnPublisher_Pressed" Command="{Binding ListViewModel.SaveRequestCommand}" CommandParameter="{Binding}" ></Button>
                 </StackLayout>
             </Frame>
 

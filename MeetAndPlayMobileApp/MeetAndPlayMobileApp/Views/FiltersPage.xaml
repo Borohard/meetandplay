@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.FiltersPage"
+             xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:enums="clr-namespace:MeetAndPlayMobileApp.Enums"
+              
+             >
+ 
+    <pages:PopupPage.Animation>
+        <animations:MoveAnimation PositionIn="Bottom" PositionOut="Bottom"
+                                    DurationIn="600" DurationOut="500" />
+    </pages:PopupPage.Animation>
+    
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+     </ContentPage.Resources>
+    
+    
+    
+    <ContentPage.Content >
+        
+            <Frame 
+                Margin="0,200,0,-20"  
+                CornerRadius="20" OutlineColor="White"
+                HorizontalOptions="Fill" 
+                VerticalOptions="FillAndExpand"
+                HasShadow="True"
+                IsClippedToBounds="True"
+                Padding="0">
+                <RefreshView>
+                <StackLayout 
+                    Margin="0,23,0,0"
+                    BackgroundColor="White"
+                    HorizontalOptions="Fill"           
+                    >
+                    <Label Text="Фильтры" TextColor="Black" FontSize="Large"  Style="{StaticResource LableStyle}"/>
+
+                    <Label Text="Дата" Margin="0,30,0,-10" Style="{StaticResource LableStyle}"/>
+                    <DatePicker x:Name="dateFilter" HorizontalOptions="Center" Date="{Binding DateFilter}" />
+
+                    <Label Text="Тип места" Margin="0,20,0,-10" Style="{StaticResource LableStyle}"/>
+                    <controls:EnumBindablePicker HorizontalTextAlignment="Center" x:Name="pickerPlaceType" x:TypeArguments="enums:PlaceType" SelectedItem="{Binding PlaceTypeFilter}" HorizontalOptions="Center" WidthRequest="200"/>
+
+
+                    <Label Text="Уровень игры"  Margin="0,20,0,-10" Style="{StaticResource LableStyle}"/>
+                    <controls:EnumBindablePicker HorizontalTextAlignment="Center" x:Name="pickerGameLevel" x:TypeArguments="enums:GameLevel" SelectedItem="{Binding GameLevelFilter}" HorizontalOptions="Center" WidthRequest="320"/>
+
+
+
+
+
+
+                    <Button Margin="0,0,0,40" Text="Приенить" Clicked="Button_Clicked" BackgroundColor="#FFD15C" HorizontalOptions="Center" VerticalOptions="EndAndExpand" CornerRadius="8" Command="{Binding FilterListCommand}" />
+
+
+
+                </StackLayout>
+            </RefreshView>
+                
+            </Frame>
+        
+        
+        
+    </ContentPage.Content>
+</pages:PopupPage>
