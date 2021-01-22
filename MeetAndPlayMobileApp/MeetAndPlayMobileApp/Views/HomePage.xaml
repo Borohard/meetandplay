@@ -13,10 +13,10 @@
 
     <Shell.SearchHandler>
         <controls:RequestSearchHandler Placeholder='Например :"Мафия"'
-                                       ShowsResults="true"
+                                       ShowsResults="False"
                                        SearchBoxVisibility="Collapsible"
-                                       
-                                       
+                                       Query="{Binding GameTitleFilter}"
+                                       Command="{Binding FilterListCommand}"
                                        ItemTemplate="{StaticResource RequestSearchTemplate}"
                                        x:Name="FilterByLName"
                                        />   
@@ -31,7 +31,8 @@
 
 
     <!--Pages can be added as references or inline-->
-    <views:TeamsListPage x:Name="teamsList" Shell.TitleColor="Black"/>
-    <views:Page1 Title="Игроки" x:Name="bruh" Shell.TitleColor="Black"/>
+    <views:Page1 Title="Команды" x:Name="bruh" Shell.TitleColor="Black"/>
+    <views:TeamsListPage Title="Игроки" x:Name="teamsList" Shell.TitleColor="Black"/>
+    
     <ContentPage Title="События" Shell.TitleColor="Black"/>
 </TabbedPage>

@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MeetAndPlayMobileApp.Extensions;
+using EnumsNET;
+using MeetAndPlayMobileApp.Enums;
+using MeetAndPlayMobileApp.Views;
 
 namespace MeetAndPlayMobileApp.Views
 {
@@ -20,11 +24,42 @@ namespace MeetAndPlayMobileApp.Views
             InitializeComponent();
             ViewModel = vm;
             this.BindingContext = ViewModel;
+
+            // labelGameLevel.Text = EnumExtensions.GetEnumDescription(ViewModel.GameLevel); 
+            // labelGameLevel.Text = (EnumExtensions.GetValueFromDescription<GameLevel>("Понимаю как играть, знаю правила")).ToString();
+            // labelGameLevel.Text = EnumExtensions.GetEnumDescriptionAtr(vm);
+            labelGameLevel.Text = ViewModel.GameLevel.GetDescription();
+            labelAuthor.Text = ViewModel.Author.LastName + " " + ViewModel.Author.FirstName;
+            labelPlaceType.Text = ViewModel.PlaceType.GetDescription();
+            if (ViewModel.IsActive == true)
+            {
+                btnHello.IsVisible = false;
+                btnInvite.IsVisible = false;
+                layoutAuthor.IsVisible = false;
+
+            }
+            else
+            {
+                btnInvites.IsVisible = false;
+                btnEdit.IsVisible = false;
+                
+            }
+
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushPopupAsync(new ShowImagePage(ViewModel) );
+            await Navigation.PushPopupAsync(new ShowImagePage(ViewModel.ImageOfRequest) );
+        }
+
+        private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AuthorPage(ViewModel.Author));
+        }
+
+        private async void btnInvites_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InvatesUsersPage());
         }
     }
 }

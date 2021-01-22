@@ -22,7 +22,8 @@ namespace MeetAndPlayMobileApp.Views
             ViewModel = vm;
             this.BindingContext = ViewModel;
            
-            dateFilter.MinimumDate = DateTime.Today;
+            dateFilterFrom.MinimumDate = DateTime.Today;
+            dateFilterTo.MinimumDate = DateTime.Today;
 
         }
 

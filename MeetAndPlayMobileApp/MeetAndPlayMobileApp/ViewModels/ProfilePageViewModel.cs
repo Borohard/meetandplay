@@ -8,5 +8,7 @@ namespace MeetAndPlayMobileApp.ViewModels
     class ProfilePageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+
     }
 }

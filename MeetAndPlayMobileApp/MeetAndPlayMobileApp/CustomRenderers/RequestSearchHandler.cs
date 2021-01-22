@@ -19,6 +19,11 @@ namespace MeetAndPlayMobileApp.CustomRenderers
         public TeamsListPage teams { get; set; }
         public Type SelectedItemNavigationTarget { get; set; }
 
+        public RequestSearchHandler()
+        {
+            
+        }
+
         protected override void OnQueryChanged(string oldValue, string newValue)
         {
             base.OnQueryChanged(oldValue, newValue);

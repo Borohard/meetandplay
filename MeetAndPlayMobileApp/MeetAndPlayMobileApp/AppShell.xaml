@@ -36,9 +36,13 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader Shell.NavBarHasShadow="False" />
+    </Shell.FlyoutHeader>
 
     
+
+
     <!--
     <FlyoutItem x:Name="fly" Route="app"
                 Title="Главная" Icon="HomeTab"
@@ -59,7 +63,7 @@
 
     <FlyoutItem x:Name="fly" Route="app"
                 Title="Главная" Icon="HomeTab"
-                FlyoutDisplayOptions="AsMultipleItems">
+                FlyoutDisplayOptions="AsMultipleItems" >
         <Tab Title="Поиск"  Icon="search2" Route="HomePage">
             <ShellContent Title="Команды" Route="teams" FlyoutItemIsVisible="False" ContentTemplate="{DataTemplate local:HomePage}"/>
         </Tab>
@@ -74,7 +78,8 @@
     </MenuItem>
 
     <ShellContent Route="LoginPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:LoginPage}" />
-    <ShellContent FlyoutItemIsVisible="False" Route="ProfilePage" Shell.BackgroundColor="#DA30DD" ContentTemplate="{DataTemplate local:ProfilePage}" />
+    <ShellContent FlyoutItemIsVisible="False" Route="ProfilePage" Shell.BackgroundColor="#FFD15C" ContentTemplate="{DataTemplate local:ProfilePage}" />
+    <ShellContent FlyoutItemIsVisible="False" Route="UserPage" Shell.BackgroundColor="#FFD15C" ContentTemplate="{DataTemplate local:UserPage}" />
 
 
 </Shell>

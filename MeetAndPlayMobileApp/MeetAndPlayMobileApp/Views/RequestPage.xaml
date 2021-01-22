@@ -40,7 +40,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <ScrollView BackgroundColor ="AliceBlue" HeightRequest="2000">
+        <ScrollView HeightRequest="2000">
             <StackLayout Margin="10">
                 <Frame HeightRequest="240" Style="{StaticResource MainFrameStyle}">
                     <Image x:Name="image" HeightRequest="230" WidthRequest="300" >
@@ -58,12 +58,12 @@
                 </Frame>
                 
                 
-                <Label Margin="0,20,0,0" Text="Описание " FontSize="Large" Style="{x:StaticResource FieldLableStyle}"/>
-                <Frame Style="{x:StaticResource FrameStyle }">
+                <Label Margin="0,10,0,0" Text="Описание " FontSize="Large" Style="{x:StaticResource FieldLableStyle}"/>
+                <Frame Margin="0,0,0,10" Style="{x:StaticResource FrameStyle }">
                     <Label Margin="10" Text="{Binding Description}"/>
                 </Frame>
                 <Label Text="Информация о мероприятии " Style="{x:StaticResource FieldLableStyle}"/>
-                <Frame Style="{x:StaticResource FrameStyle }">
+                <Frame Margin="0,0,0,10" Style="{x:StaticResource FrameStyle }">
                     <StackLayout Margin="15">
                         <StackLayout Orientation="Horizontal">
                             <Image Source="Game.png" WidthRequest="15"/>
@@ -73,7 +73,7 @@
                         <StackLayout Orientation="Horizontal" >
                             <Image Source="Adress.png" WidthRequest="15"/>
                             <Label Text="Где:"/>
-                            <Label Text="{Binding PlaceType}" />
+                            <Label x:Name="labelPlaceType" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="PlannedGame.png" WidthRequest="15"/>
@@ -88,14 +88,33 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame BackgroundColor="AliceBlue" >
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Максимальное количество игроков:  " Style="{x:StaticResource FieldLableStyle} "/>
-                        <Label Text="{Binding MaxPlayersCount}" />
-                    </StackLayout>    
+                <Frame Margin="0,0,0,10"  Style="{x:StaticResource FrameStyle }">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="15,15,15,5">
+                            <Label Text="Максимальное количество игроков:  " Style="{x:StaticResource FieldLableStyle} "/>
+                            <Label Text="{Binding MaxPlayersCount}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="15,15,15,15">
+                            <Label Text="Уровень игры:  " Style="{x:StaticResource FieldLableStyle} "/>
+                            <Label x:Name="labelGameLevel" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" x:Name="layoutAuthor"  Margin="15,5,15,15">
+                            <Label Text="Автор заявки:  " Style="{x:StaticResource FieldLableStyle} "/>
+                            <Label x:Name="labelAuthor" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                        </StackLayout>
+                    </StackLayout>
                 </Frame>
-                <StackLayout Orientation="Horizontal" Margin="0,20,0,20">
+                <Button x:Name="btnInvites" CornerRadius="10" BackgroundColor="Purple" Text="Кто постучался?" Clicked="btnInvites_Clicked" >
+                    
+                </Button>
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,20">
                     <Button  x:Name ="btnHello" Text="Постучаться" TextColor="Black"  BackgroundColor="#FFD15C" CornerRadius="10" HorizontalOptions="Start" ></Button>
+                    <Button  x:Name ="btnEdit" Text="Редактировать" TextColor="Black"  BackgroundColor="#FFD15C" CornerRadius="10" HorizontalOptions="FillAndExpand" ></Button>
                     <Button  x:Name ="btnInvite" Text="Позвать к себе" TextColor="Black" BackgroundColor="#FFD15C" CornerRadius="10" HorizontalOptions="EndAndExpand" ></Button>
                 </StackLayout>
                 

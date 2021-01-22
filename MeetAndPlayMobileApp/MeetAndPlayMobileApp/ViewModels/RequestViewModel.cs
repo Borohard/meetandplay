@@ -21,6 +21,7 @@ namespace MeetAndPlayMobileApp.ViewModels
             Request = new Request();
         }
 
+        
         public RequestsListViewModel ListViewModel
         {
             get { return lvm; }
@@ -30,6 +31,20 @@ namespace MeetAndPlayMobileApp.ViewModels
                 {
                     lvm = value;
                     OnPropertyChanged("ListViewModel");
+                }
+            }
+        }
+
+
+        public User Author
+        {
+            get { return Request.Author; }
+            set
+            {
+                if (Request.Author != value)
+                {
+                    Request.Author = value;
+                    OnPropertyChanged("Author");
                 }
             }
         }

@@ -19,6 +19,7 @@ namespace MeetAndPlayMobileApp.Views
             
             BindingContext = bruh.BindingContext;
             FilterByLName.Requestss = new RequestsListViewModel().Requests;
+            
         }
 
         

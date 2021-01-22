@@ -23,16 +23,16 @@ namespace MeetAndPlayMobileApp.Views {
         private global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry txtName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerMale;
+        private global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry txtLastName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry txtOld;
+        private global::MeetAndPlayMobileApp.CustomRenderers.EnumBindablePicker<global::MeetAndPlayMobileApp.Enums.Gender> genderPicker;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.DatePicker birthDatePicker;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::MeetAndPlayMobileApp.CustomRenderers.CustomEditor txtInfo;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry txtCity;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::MeetAndPlayMobileApp.CustomRenderers.CustomEditor txtFreeTime;
@@ -63,10 +63,10 @@ namespace MeetAndPlayMobileApp.Views {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ProfilePage));
             image = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "image");
             txtName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry>(this, "txtName");
-            pickerMale = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerMale");
-            txtOld = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry>(this, "txtOld");
+            txtLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry>(this, "txtLastName");
+            genderPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.EnumBindablePicker<global::MeetAndPlayMobileApp.Enums.Gender>>(this, "genderPicker");
+            birthDatePicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "birthDatePicker");
             txtInfo = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEditor>(this, "txtInfo");
-            txtCity = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry>(this, "txtCity");
             txtFreeTime = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEditor>(this, "txtFreeTime");
             txtGames = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry>(this, "txtGames");
             txtPlayLvl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.CustomEntry>(this, "txtPlayLvl");

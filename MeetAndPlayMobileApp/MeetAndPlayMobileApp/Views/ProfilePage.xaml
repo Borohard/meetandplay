@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:MeetAndPlayMobileApp"
              xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
              FlyoutItem.IsVisible="False"
-             Title="Профиль"         
+             Title="Профиль" 
+             xmlns:enums="clr-namespace:MeetAndPlayMobileApp.Enums"        
              >
     <!--Common Styles Starts-->
     <ContentPage.Resources>
@@ -44,42 +45,39 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <StackLayout Margin="10,10"  VerticalOptions="Start" BackgroundColor="White">
-            <Image  Margin="0,20,0,0" x:Name="image" Source="user"   WidthRequest="200" />
-            <Button Margin="35" BackgroundColor="#DA30DD" Text="Загрузить фото" Clicked="OnPickPhotoButtonClicked"/>
+        <StackLayout Margin="10"  VerticalOptions="Start" BackgroundColor="White">
+            <Frame HeightRequest="240" Style="{StaticResource MainFrameStyle}">
+                <Image x:Name="image" HeightRequest="230" Source="user" WidthRequest="300" />
+            </Frame>
+            <Button Margin="0,-10,0,30" BackgroundColor="#FFD15C" TextColor="Black" HorizontalOptions="Center" Text="Загрузить  фото" Clicked="OnPickPhotoButtonClicked"/>
             <Label Text="Личная информация" FontSize="18" TextColor="Black"></Label>
             
             <Frame Style="{StaticResource MainFrameStyle}">
                 <StackLayout>
                     <Label Style="{StaticResource FieldLableStyle}" Text="Имя" />
                     <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEntry x:Name="txtName" Keyboard="Text" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                        <controls:CustomEntry x:Name="txtName" Keyboard="Text" Text="{Binding FirstName}" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Фамилия" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry x:Name="txtLastName" Text="{Binding LastName}" Keyboard="Text" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
                     </Frame>
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Пол"/>
-                    <Frame HorizontalOptions="Start" WidthRequest="90" Style="{StaticResource FrameStyle}">
-                        <Picker x:Name="pickerMale" >
-                            <Picker.Items>
-                                <x:String>Мужской</x:String>
-                                <x:String>Женский</x:String>
-                            </Picker.Items>
-                        </Picker>
+                    <Frame HorizontalOptions="Start" WidthRequest="160" Style="{StaticResource FrameStyle}">
+                        <controls:EnumBindablePicker x:Name="genderPicker" x:TypeArguments="enums:Gender" SelectedItem="{Binding Gender}" />
                     </Frame>
 
-                    <Label Style="{StaticResource FieldLableStyle}" Text="Возраст"/>
-                    <Frame Margin="0,0,0,10" HorizontalOptions="Start" WidthRequest="60" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEntry x:Name="txtOld" Keyboard="Numeric" MaxLength="3" FontSize="Medium" Style="{StaticResource EntryStyle}"></controls:CustomEntry>
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Дата рождения"/>
+                    <Frame Margin="0,0,0,10" HorizontalOptions="Start" WidthRequest="160" Style="{StaticResource FrameStyle}">
+                        <DatePicker HorizontalOptions="Center" x:Name="birthDatePicker" Date="{Binding BirthDate}" />
                     </Frame>
 
                     <Label Style="{StaticResource FieldLableStyle}" Text="Краткая информация" />
                     <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEditor x:Name="txtInfo" AutoSize="TextChanges" ></controls:CustomEditor>
+                        <controls:CustomEditor x:Name="txtInfo" Text="{Binding AboutUser}" AutoSize="TextChanges" ></controls:CustomEditor>
 
-                    </Frame>
-
-                    <Label Style="{StaticResource FieldLableStyle}" Text="Город" />
-                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
-                        <controls:CustomEntry x:Name="txtCity" Keyboard="Text" FontSize="Medium"  Style="{StaticResource EntryStyle}"></controls:CustomEntry>
                     </Frame>
                 </StackLayout>
             </Frame>
@@ -129,7 +127,7 @@
                     </Frame  >
 
 
-                    <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="btnGoToLoginPage" TextColor="White" BackgroundColor="{StaticResource LightGreenColor}" Text="Войти" Clicked="btnGoToLoginPage_Clicked"></Button>
+                    <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="btnGoToLoginPage" TextColor="White" BackgroundColor="{StaticResource LightGreenColor}" Text="Сохранить" Clicked="btnGoToLoginPage_Clicked"></Button>
                 </StackLayout>
             </Frame>
 

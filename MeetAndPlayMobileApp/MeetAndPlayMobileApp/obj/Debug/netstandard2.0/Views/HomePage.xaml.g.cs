@@ -23,18 +23,18 @@ namespace MeetAndPlayMobileApp.Views {
         private global::MeetAndPlayMobileApp.CustomRenderers.RequestSearchHandler FilterByLName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::MeetAndPlayMobileApp.Views.TeamsListPage teamsList;
+        private global::MeetAndPlayMobileApp.Views.Page1 bruh;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::MeetAndPlayMobileApp.Views.Page1 bruh;
+        private global::MeetAndPlayMobileApp.Views.TeamsListPage teamsList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(HomePage));
             homePage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.TabbedPage>(this, "homePage");
             FilterByLName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.RequestSearchHandler>(this, "FilterByLName");
-            teamsList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.Views.TeamsListPage>(this, "teamsList");
             bruh = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.Views.Page1>(this, "bruh");
+            teamsList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.Views.TeamsListPage>(this, "teamsList");
         }
     }
 }

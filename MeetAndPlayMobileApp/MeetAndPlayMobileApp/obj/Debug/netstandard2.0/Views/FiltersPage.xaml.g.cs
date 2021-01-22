@@ -17,7 +17,10 @@ namespace MeetAndPlayMobileApp.Views {
     public partial class FiltersPage : global::Rg.Plugins.Popup.Pages.PopupPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.DatePicker dateFilter;
+        private global::Xamarin.Forms.DatePicker dateFilterFrom;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.DatePicker dateFilterTo;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::MeetAndPlayMobileApp.CustomRenderers.EnumBindablePicker<global::MeetAndPlayMobileApp.Enums.PlaceType> pickerPlaceType;
@@ -28,7 +31,8 @@ namespace MeetAndPlayMobileApp.Views {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(FiltersPage));
-            dateFilter = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dateFilter");
+            dateFilterFrom = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dateFilterFrom");
+            dateFilterTo = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dateFilterTo");
             pickerPlaceType = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.EnumBindablePicker<global::MeetAndPlayMobileApp.Enums.PlaceType>>(this, "pickerPlaceType");
             pickerGameLevel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MeetAndPlayMobileApp.CustomRenderers.EnumBindablePicker<global::MeetAndPlayMobileApp.Enums.GameLevel>>(this, "pickerGameLevel");
         }

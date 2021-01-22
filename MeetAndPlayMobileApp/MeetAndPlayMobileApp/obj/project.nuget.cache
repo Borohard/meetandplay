@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "pnVuQruwFwMNpeLLh5LpVcW8YLe2PL0rczlg6LLtRlLeLHh+qK3pnyZL1G3bcrmTc3fVt7dwNtCO3/wk4YLfnQ==",
+  "dgSpecHash": "HJxcDwvBqasdOHJs10On4Z/L9UKZXo5wfuCcPxWxn5wsA7eIXX6YIPNnyFt6x+1LUeCEaiHRvF11dTAcuafoFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\MeetAndPlayMobileApp\\MeetAndPlayMobileApp\\MeetAndPlayMobileApp\\MeetAndPlayMobileApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\enums.net\\3.0.3\\enums.net.3.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\rg.plugins.popup\\2.0.0.10\\rg.plugins.popup.2.0.0.10.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\xamarin.forms\\5.0.0.1874\\xamarin.forms.5.0.0.1874.nupkg.sha512"
   ],

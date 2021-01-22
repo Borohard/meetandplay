@@ -24,3 +24,9 @@ C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPla
 C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\FiltersPage.xaml.g.cs
 C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\Page1.xaml.g.cs
 C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\ShowImagePage.xaml.g.cs
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\UserPage.xaml.g.cs
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\CustomRenderers\FlyoutHeader.xaml.g.cs
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\AuthorPage.xaml.g.cs
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\InteractionsUserPage.xaml.g.cs
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\InvatesUsersPage.xaml.g.cs
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp\obj\Debug\netstandard2.0\Views\ShowMessegeText.xaml.g.cs

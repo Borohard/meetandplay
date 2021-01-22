@@ -14,19 +14,20 @@ namespace MeetAndPlayMobileApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
-        private object obj;
-        private object homePage;
+        
         public ObservableCollection<RequestViewModel> Requestss { get; set; }
         public Page1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
             BindingContext = new RequestsListViewModel() { Navigation = this.Navigation };
+
+
             
 
+
+
             var viewModel = (RequestsListViewModel)BindingContext;
-            if (viewModel.RefreshCommand.CanExecute(null)) viewModel.RefreshCommand.Execute(requestsCollection);
-            
+            if (viewModel.RefreshCommand.CanExecute(null)) viewModel.RefreshCommand.Execute(requestsCollection);           
             Requestss = (ObservableCollection<RequestViewModel>)requestsCollection.ItemsSource;
             //requestsCollection.ItemsSource = new ObservableCollection<RequestViewModel>(Requestss.Where((request) => request.CurrentPlayersCount.ToString.Contains(.ToLower())));
         }
@@ -45,5 +46,7 @@ namespace MeetAndPlayMobileApp.Views
             requestsCollection.ItemsSource = new ObservableCollection<RequestViewModel>(Requestss.Where((request) => request.CurrentPlayersCount == 1));
             
         }
+
+        
     }
 }

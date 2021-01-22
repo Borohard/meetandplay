@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.InteractionsUserPage"
+              xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
+             xmlns:views="clr-namespace:MeetAndPlayMobileApp.Views"
+             xmlns:data="clr-namespace:MeetAndPlayMobileApp.Data"
+             Title="MeetAndPlay"
+             BarBackgroundColor="#FFD15C"
+            BarTextColor="Black"
+            x:Name="InterectionsUserPage">
+  <!--Pages can be added as references or inline-->
+  <ContentPage Title="Мои Заявки" />
+  <ContentPage Title="Меня пригласили" />
+  <ContentPage Title="Я постучался" />
+</TabbedPage>

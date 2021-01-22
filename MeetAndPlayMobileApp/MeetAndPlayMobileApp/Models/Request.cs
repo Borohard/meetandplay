@@ -25,5 +25,7 @@ namespace MeetAndPlayMobileApp.Models
 
         public PlaceType PlaceType { get; set; }
 
+        public User Author { get; set; }
+
     }
 }

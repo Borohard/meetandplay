@@ -605,3 +605,10 @@ C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPla
 C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\res\drawable\anticafe.png
 C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\android\src\crc646fa49111e5fe1d35\AlarmHandler.java
 C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\res\drawable\rickandmorty.jpg
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\android\assets\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\android\assets\Enums.NET.dll
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\android\assets\Enums.NET.pdb
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\res\drawable\alina.jpg
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\res\drawable\sanya.jpg
+C:\Users\Admin\source\repos\MeetAndPlayMobileApp\MeetAndPlayMobileApp\MeetAndPlayMobileApp.Android\obj\Debug\100\res\drawable\pasha.jpg

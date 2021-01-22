@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetAndPlayMobileApp.Views.UserPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FieldLableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="MainFrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Margin" Value="0,0,0,20"/>
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
+                <Setter Property="BackgroundColor" Value="#F7F7F7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Margin="10" BackgroundColor ="AliceBlue">
+            <Frame HeightRequest="240" Style="{StaticResource MainFrameStyle}">
+                <Image x:Name="image" HeightRequest="230" WidthRequest="300" >
+                    <!--
+                        {Binding ImageOfRequest}
+                        -->
+                    <Image.Source>
+                        <FileImageSource File="user"  />
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <Label Text="Личная информация" FontSize="18" TextColor="Black"/>
+            <Frame  Style="{x:StaticResource FrameStyle}">
+                <StackLayout Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Пол"  Style="{StaticResource FieldLableStyle}"/>
+                        <Label Text="{Binding Gender} " />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Дата рождения"  Style="{StaticResource FieldLableStyle}"/>
+                        <Label Text="{Binding BirthDate} " />
+                    </StackLayout>
+                </StackLayout>
+                
+            </Frame>
+
+            <Frame  Style="{x:StaticResource FrameStyle}">
+                <StackLayout Margin="10">
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Краткая информация" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding About}"/>    
+                    </Frame>
+                    
+                </StackLayout>
+
+            </Frame>
+
+            <Label Text="Интересы" FontSize="18" TextColor="Black"></Label>
+            <Frame Style="{x:StaticResource FrameStyle}">
+                <StackLayout  Margin="10">
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Свободное время" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding FreeTime}"/>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Игры" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding FreeTime}"/>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Уровень игры" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding FreeTime}"/>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Краткая информация"/>
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding FreeTime}"/>
+                    </Frame  >
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Контактная информация" FontSize="18" TextColor="Black"></Label>
+            <Frame Style="{x:StaticResource FrameStyle}">
+                <StackLayout Margin="10">
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Электронная почта" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding UserEmail}"/>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Телефон" />
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding UserPhoneNumber}"/>
+                    </Frame>
+
+                    <Label Style="{StaticResource FieldLableStyle}" Text="Социальные сети"/>
+                    <Frame Margin="0,0,0,10" Style="{StaticResource FrameStyle}">
+                        <Label Text="{Binding UserSocialNetworks}"/>
+                    </Frame  >
+
+
+                    <Button Margin="100,20" BorderRadius="6" WidthRequest="200" x:Name="btnGoToLoginPage" TextColor="White" BackgroundColor="{StaticResource LightGreenColor}" Text="Редактировать" Clicked="btnGoToLoginPage_Clicked"></Button>
+                </StackLayout>
+            </Frame>
+
+
+        </StackLayout>
+    </ScrollView>
+    
+
+
+
+</ContentPage>

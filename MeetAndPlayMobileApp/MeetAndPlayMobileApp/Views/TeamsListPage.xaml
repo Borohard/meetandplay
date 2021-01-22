@@ -4,7 +4,7 @@
              x:Class="MeetAndPlayMobileApp.Views.TeamsListPage"
              xmlns:controls="clr-namespace:MeetAndPlayMobileApp.CustomRenderers"
              xmlns:data="clr-namespace:MeetAndPlayMobileApp.Data"
-             Title="Команды"
+             
              Shell.TitleColor="Black"
              Shell.BackgroundColor="#A0F5FB"
              >

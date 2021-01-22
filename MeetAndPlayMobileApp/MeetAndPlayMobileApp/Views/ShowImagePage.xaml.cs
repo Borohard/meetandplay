@@ -16,12 +16,12 @@ namespace MeetAndPlayMobileApp.Views
     {
         public RequestViewModel ViewModel { get; private set; }
         public ImageSource ImageSource { get; set; }
-        public ShowImagePage(RequestViewModel vm)
+        public ShowImagePage(ImageSource vm)
         {
             InitializeComponent();
-            ViewModel = vm;
+            //ViewModel = vm;
             BindingContext = ViewModel;
-            //imageItem.Source = ImageSource;
+            imageItem.Source = vm;
             
             
         }

@@ -3,8 +3,10 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "MeetAndPlayMobileApp.Android.dll" comes first in this list. */
 		"MeetAndPlayMobileApp.Android.dll",
+		"Enums.NET.dll",
 		"FormsViewGroup.dll",
 		"MeetAndPlayMobileApp.dll",
+		"Newtonsoft.Json.dll",
 		"Rg.Plugins.Popup.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

@@ -10,12 +10,16 @@ namespace MeetAndPlayMobileApp.Enums
     {
 
         [Display(Description = " ")]
+        [Description(" ")]
         Undefined,
         [Display(Description = "Дома")]
+        [Description("Дома")]
         Home,
         [Display(Description = "В кафе")]
+        [Description("В кафе")]
         Cafe,
         [Display(Description = "В лаундж баре")]
+        [Description("В лаундж баре")]
         Lounge,
     }
 }
